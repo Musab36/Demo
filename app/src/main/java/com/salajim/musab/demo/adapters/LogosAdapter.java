@@ -22,8 +22,8 @@ import butterknife.ButterKnife;
  */
 
 public class LogosAdapter extends RecyclerView.Adapter<LogosAdapter.LogosViewHolder> {
-    private static final int MAX_WIDTH = 200;
-    private static final int MAX_HEIGHT = 200;
+    private static final int MAX_WIDTH = 500;
+    private static final int MAX_HEIGHT = 300;
 
     private ArrayList<Demo> mDemos = new ArrayList<>();
     private Context mContext;
