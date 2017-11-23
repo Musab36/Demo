@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.salajim.musab.demo.R;
 import com.salajim.musab.demo.adapters.LogosAdapter;
@@ -37,6 +40,23 @@ public class MainActivity extends AppCompatActivity {
         String demos = intent.getStringExtra("demos");
         getLogos(demos);
 
+    }
+
+    //Inflating Menus
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+        inflater.inflate(R.menu.qr_code_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Menu click listener
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        return super.onOptionsItemSelected(item);
     }
 
     //This method retrieves the data that will be displayed
