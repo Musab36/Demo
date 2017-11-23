@@ -1,6 +1,7 @@
 package com.salajim.musab.demo.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 
 import com.salajim.musab.demo.R;
 import com.salajim.musab.demo.models.Demo;
+import com.salajim.musab.demo.ui.DetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -54,7 +58,7 @@ public class LogosAdapter extends RecyclerView.Adapter<LogosAdapter.LogosViewHol
     }
 
     // viewHolder class as an inner/nested class
-    public class LogosViewHolder extends RecyclerView.ViewHolder {
+    public class LogosViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @Bind(R.id.logosImageView) ImageView mLogosImageView;
         @Bind(R.id.titleTextView) TextView mTitle;
 
@@ -64,6 +68,8 @@ public class LogosAdapter extends RecyclerView.Adapter<LogosAdapter.LogosViewHol
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+
         }
 
         public void bindLogos(Demo demo) {
@@ -74,6 +80,15 @@ public class LogosAdapter extends RecyclerView.Adapter<LogosAdapter.LogosViewHol
                     .into(mLogosImageView);
 
             mTitle.setText(demo.getTitle());
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, DetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("demos", Parcels.wrap(mDemos));
+            mContext.startActivity(intent);
         }
 
     }

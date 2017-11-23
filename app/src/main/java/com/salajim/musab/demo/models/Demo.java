@@ -1,11 +1,14 @@
 package com.salajim.musab.demo.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Musab on 11/22/2017.
  */
+@Parcel
 public class Demo {
-    private String urlToImage;
-    private  String title;
+    String urlToImage;
+    String title;
 
     public Demo() { }
 
