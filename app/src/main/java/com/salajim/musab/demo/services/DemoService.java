@@ -57,8 +57,9 @@ public class DemoService {
                     JSONObject newsJSON = articlesJSON.getJSONObject(i);
                     String urlToImage = newsJSON.getString("urlToImage");
                     String title = newsJSON.getString("title");
+                    String description = newsJSON.getString("description");
 
-                    Demo demo = new Demo(urlToImage, title);
+                    Demo demo = new Demo(urlToImage, title, description);
                     demos.add(demo);
                 }
             }

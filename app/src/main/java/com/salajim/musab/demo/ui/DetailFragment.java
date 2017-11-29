@@ -27,6 +27,7 @@ public class DetailFragment extends Fragment {
 
     @Bind(R.id.detailImageView) ImageView mDetailImageView;
     @Bind(R.id.detailTitle) TextView mDetailTitle;
+    @Bind(R.id.description) TextView mDescription;
 
     private Demo mDemo;
 
@@ -61,6 +62,7 @@ public class DetailFragment extends Fragment {
                 .into(mDetailImageView);
 
         mDetailTitle.setText(mDemo.getTitle());
+        mDescription.setText("Description \n" + mDemo.getDescription());
         return view;
     }
 

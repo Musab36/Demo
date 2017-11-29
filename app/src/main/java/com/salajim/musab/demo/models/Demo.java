@@ -9,12 +9,14 @@ import org.parceler.Parcel;
 public class Demo {
     String urlToImage;
     String title;
+    String description;
 
     public Demo() { }
 
-    public Demo(String urlToImage, String title) {
+    public Demo(String urlToImage, String title, String description) {
         this.urlToImage = urlToImage;
         this.title = title;
+        this.description = description;
     }
 
     public String getUrlToImage() {
@@ -23,5 +25,9 @@ public class Demo {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
